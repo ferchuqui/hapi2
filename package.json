@@ -1,0 +1,29 @@
+{
+  "name": "hapi2",
+  "version": "1.0.0",
+  "description": "Una aplicacion como StackOverflow",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferchuqui/hapi2.git"
+  },
+  "author": "Luis Fernando Farji <luisfernandofarji@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ferchuqui/hapi2/issues"
+  },
+  "homepage": "https://github.com/ferchuqui/hapi2#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "standard": "^13.1.0"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1"
+  }
+}
