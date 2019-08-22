@@ -21,7 +21,7 @@ async function validateUser (req, h){
     console.error(error)
     return h.response('Problemas validando el usuario').code(500)
   }
-  return error
+  return result
 }
 module.exports = {
   createUser: createUser,
