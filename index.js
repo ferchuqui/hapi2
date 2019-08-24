@@ -7,6 +7,8 @@ const path = require('path')
 const routes = require('./routes')
 const vision = require('vision')
 
+
+
 const server = Hapi.server({
   port: process.env.PORT || 3000,
   host: 'localhost',
@@ -22,6 +24,12 @@ async function init () {
     await server.register(inert)
     await server.register(vision)
 
+    server.state('user', {
+      ttl: 1000 * 60 * 60 * 24 * 7,
+      isSecure: process.env.NODE_ENV === 'prod',
+      encoding: 'base64json'
+    })
+    
     server.views({
       engines: {
         hbs: handlerbars
