@@ -24,6 +24,7 @@
     "standard": "^13.1.0"
   },
   "dependencies": {
+    "@hapi/boom": "^7.4.3",
     "@hapi/hapi": "^18.3.1",
     "@hapi/joi": "^15.1.0",
     "bcrypt": "^3.0.6",
