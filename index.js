@@ -4,6 +4,7 @@ const Hapi = require('@hapi/hapi')
 const handlerbars = require('handlebars')
 const inert = require('inert')
 const path = require('path')
+const site = require('./controllers/site')
 const routes = require('./routes')
 const vision = require('vision')
 
@@ -39,7 +40,7 @@ async function init () {
       layout: true,
       layoutPath: 'views'
     })
-
+    server.ext('onPreResponse', site.fileNotFound)
     server.route(routes)
 
     await server.start()
