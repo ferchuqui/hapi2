@@ -21,13 +21,15 @@
   "homepage": "https://github.com/ferchuqui/hapi2#readme",
   "devDependencies": {
     "nodemon": "^1.19.1",
-    "standard": "^13.1.0"
+    "standard": "^13.1.0",
+    " eslint-utils ": "^ 1.4.1 "
   },
   "dependencies": {
     "@hapi/boom": "^7.4.3",
     "@hapi/hapi": "^18.3.1",
     "@hapi/joi": "^15.1.0",
     "bcrypt": "^3.0.6",
+    "eslint-utils": "^1.4.2",
     "firebase-admin": "^8.3.0",
     "handlebars": "^4.1.2",
     "inert": "^5.1.3",

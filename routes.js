@@ -2,7 +2,9 @@
 const Joi = require('@hapi/joi')
 const site = require('./controllers/site')
 const user = require('./controllers/user')
+const question = require ('./controllers/question')
 
+console.log(question)
 module.exports = [
   {
     method: 'GET',
@@ -40,19 +42,38 @@ module.exports = [
     handler: user.logout
   },
   {
-  method: 'POST',
-  path: '/validate-user',
-  options: {
-    validate: {
-      payload: {
-        email: Joi.string().email().required(),
-        password: Joi.string().required().min(6)
-      },
-      failAction: user.failValidation
-    }
+    method: 'GET',
+    path: '/ask',
+    handler: site.ask
   },
-  handler: user.validateUser
-},
+  {
+    path: '/validate-user',
+    method: 'POST',
+    options: {
+      validate: {
+        payload: {
+          email: Joi.string().email().required(),
+          password: Joi.string().required().min(6)
+        },
+        failAction: user.failValidation
+      }
+    },
+    handler: user.validateUser
+  },
+  {
+    path: '/create-question',
+    method: 'POST',
+    options: {
+      validate: {
+        payload: {
+          title: Joi.string().required(),
+          description: Joi.string().required()
+        },
+        failAction: user.failValidation
+      }
+    },
+    handler: question.createQuestion
+  },
   {
     method: 'GET',
     path: '/assets/{param*}',
