@@ -4,7 +4,6 @@ const site = require('./controllers/site')
 const user = require('./controllers/user')
 const question = require ('./controllers/question')
 
-console.log(question)
 module.exports = [
   {
     method: 'GET',
