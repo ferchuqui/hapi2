@@ -7,12 +7,17 @@ class Questions {
   }
   async create(data, user) {
     data.owner = user
-    const questions = this.collection.push()
+    const question = this.collection.push()
     question.set(data)
     return question.key
   }
   async getLast(amount) {
     const query = await this.collection.limitToLast(amount).once('value')
+    const data = query.val()
+    return data
+  }
+  async getone (id) {
+    const query = await this.collection.child(id).once('value')
     const data = query.val()
     return data
   }
