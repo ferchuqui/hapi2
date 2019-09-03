@@ -4,7 +4,7 @@ const questions = require('../models/index').questions
 
 async function createQuestion (req, h) {
   if(!req.state.user) {
-    return h.direct('login')
+    return h.direct('/login')
   }
   let result
   try {
@@ -23,7 +23,7 @@ async function createQuestion (req, h) {
 }
 async function answerQuestion(req, h){
   if(!req.state.user) {
-    return h.direct('login')
+    return h.direct('/login')
   }
   let result
   try {
