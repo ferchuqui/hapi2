@@ -63,7 +63,8 @@ module.exports = [
       validate: {
         payload: {
           email: Joi.string().email().required(),
-          password: Joi.string().required().min(6)
+          password: Joi.string().required().min(6),
+          image: Joi.any().optional()
         },
         failAction: user.failValidation
       }

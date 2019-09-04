@@ -30,7 +30,7 @@ async function createQuestion (req, h) {
     }).code(500).takeover()
   }
 
-  return h.response(`Pregunta creada con el ID ${result}`)
+  return h.redirect(`/question/${result}`)
 }
 async function answerQuestion(req, h){
   if(!req.state.user) {
